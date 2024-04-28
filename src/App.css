@@ -1,0 +1,51 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+/* Add the following styles to your App.css or another stylesheet */
+
+/* Adjust the height of the carousel container
+.slick-slider {
+    height: 80vh; /* Adjust the height as needed */
+ */
+
+/* Center the content vertically and horizontally */
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the individual slide */
+.slick-slide > div {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the profile image */
+.slick-slide img {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make the image rounded */
+    margin-bottom: 10px; /* Add space below the image */
+}
+
+/* Style the text content */
+.slick-slide p {
+    margin: 0;
+    color: #111111; /* Adjust the text color */
+    font-size: 16px; /* Adjust the font size */
+    line-height: 1.5; /* Adjust the line height */
+}
+.slick-arrow slick-next {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}

@@ -1,0 +1,29 @@
+[
+    {
+      "image": "https://koa.com/blog/images/group-of-friends-taking-a-hike.jpg",
+      "name": "Hiking",
+      "duration": "3 day tour",
+      "groupSize": "Up to 15 people",
+      "accommodation": "Sleep in provided tents",
+      "guides": "2 tour guides",
+      "difficulty": "Easy"
+    },
+    {
+      "image": "https://www.uniquerwandavacations.com/wp-content/uploads/2022/07/canpy-walk-nyungwe.jpg",
+      "name": "Canopy Walk",
+      "duration": "5 day tour",
+      "groupSize": "Up to 20 people",
+      "accommodation": "Hotel accommodation",
+      "guides": "3 tour guides",
+      "difficulty": "Medium"
+    },
+    {
+      "image": "https://rwandaecocompany.com/wp-content/uploads/2022/04/lake-kivu.jpg",
+      "name": "Mountain Climbing",
+      "duration": "7 day tour",
+      "groupSize": "Up to 25 people",
+      "accommodation": "Stay in provided cabins",
+      "guides": "4 tour guides",
+      "difficulty": "Hard"
+    }
+  ]
