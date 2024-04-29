@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import bg from "../assets/bg.jpg";
+import useScrollReveal from "../utils/useScrollReveal";
 import tours from "../tours.json";
 
 const TourCards = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  useScrollReveal(".tour-card");
 
   useEffect(() => {
     const loadImage = (imageSrc) => {
@@ -29,14 +32,15 @@ const TourCards = () => {
   }, []);
 
   return (
+
     <div className="bg-cover bg-[#466174] h-screen border-4" style={{ backgroundImage: `url(${bg})`, zIndex: -1 }}>
-      <h1 className="text-center text-4xl font-bold text-black w-full p-5">MOST POPULAR TOURS</h1>
+      <h1 className="text-center text-4xl text-gray-200 font-bold text-black w-full p-5 mt-16">MOST POPULAR TOURS</h1>
 
       {imagesLoaded && (
-        <div className="flex items-center justify-center">
-          <div className="grid grid-cols-3 gap-8 items-center justify-center ">
+        <div className="flex justify-center mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center ">
             {tours.map((tour, index) => (
-              <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg bg-white relative">
+              <div key={index} className="tour-card max-w-sm rounded overflow-hidden shadow-lg bg-white relative">
                 <img src={tour.image} alt={tour.name} className="w-full" /> {/* Use the images object to get the correct image */}
                 <div className="absolute bg-black bg-opacity-60 text-white px-2 py-5 -mt-20 right-2">{tour.name}</div>
                 <div className="px-6 py-4">
@@ -59,6 +63,7 @@ const TourCards = () => {
         </div>
       )}
     </div>
+
   );
 };
 

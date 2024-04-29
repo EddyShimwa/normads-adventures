@@ -2,29 +2,29 @@
     {
         "id": 1,
         "blogImage": "https://files.worldwildlife.org/wwfcmsprod/images/Mountain_Gorilla_Silverback_WW22557/story_full_width/36fcoamev0_Mountain_Gorilla_Silverback_WW22557.jpg",
-        "blogTitle": "Blog 1",
+        "blogTitle": "Lorem Ipsum Dolor Sit Amet",
         "timeCreated": "2022-01-01",
-        "blogContent": "This is the content for blog 1. from json"
+        "blogContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim. Nullam quis risus eget urna mollis ornare vel eu leo."
     },
     {
         "id": 2,
         "blogImage": "https://files.worldwildlife.org/wwfcmsprod/images/Mountain_Gorilla_Silverback_WW22557/story_full_width/36fcoamev0_Mountain_Gorilla_Silverback_WW22557.jpg",
-        "blogTitle": "Blog 2",
+        "blogTitle": "Lorem Ipsum Dolor Sit Amet",
         "timeCreated": "2024-03-09",
-        "blogContent": "This is the content for blog 2. from json"
+        "blogContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim. Nullam quis risus eget urna mollis ornare vel eu leo."
     },
     {
         "id": 3,
         "blogImage": "https://files.worldwildlife.org/wwfcmsprod/images/Mountain_Gorilla_Silverback_WW22557/story_full_width/36fcoamev0_Mountain_Gorilla_Silverback_WW22557.jpg",
-        "blogTitle": "Blog 1",
+        "blogTitle": "Lorem Ipsum Dolor Sit Amet",
         "timeCreated": "2022-01-01",
-        "blogContent": "This is the content for blog 1. from json"
+        "blogContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim."
     },
     {
         "id": 4,
         "blogImage": "https://files.worldwildlife.org/wwfcmsprod/images/Mountain_Gorilla_Silverback_WW22557/story_full_width/36fcoamev0_Mountain_Gorilla_Silverback_WW22557.jpg",
-        "blogTitle": "Blog 2",
+        "blogTitle": "Lorem Ipsum Dolor Sit Amet",
         "timeCreated": "2024-03-09",
-        "blogContent": "This is the content for blog 2. from json"
+        "blogContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim."
     }
 ]

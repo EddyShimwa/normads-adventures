@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from '../components/homepage'
-import Tours from '../components/tours'
+import HomePage from '../components/homePage/homepage'
+import Services from '../components/services';
 import TourCards from '../components/TourCards'
 import Reviews from '../components/reviews'
 import BookingCard from '../components/bookingCard'
@@ -12,7 +12,7 @@ function Home() {
   return (
     <div>
       <HomePage/>
-      <Tours/>
+      <Services/>
       <TourCards/>
       <BlogsMain/>
       <Reviews/>
