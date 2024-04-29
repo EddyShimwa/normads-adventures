@@ -48,18 +48,18 @@ function HomePage() {
               }}
             >
                 <UpcomingTour />
-              <div className="absolute top-0 left-0">
-                <h1 className="text-7xl w-1/2 font-bold text-gray-100 p-5 mt-16">
-                  NOMADS
-                </h1>
-                <h1 className="text-7xl w-1/2 font-bold text-gray-100 opacity-50 p-5 -mt-8">
-                  ADVENTURES
-                </h1>
-                <p className="pl-7 w-3/4 text-gray-200">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Consequuntur quibusdam
-                </p>
-              </div>
+                <div className="absolute top-0 ml-8 flex flex-col items-start">
+  <h1 className="text-6xl w-1/2 font-bold text-white p-5 mt-8">
+    NOMADS
+  </h1>
+  <h1 className="text-6xl w-1/2 font-bold text-gray-100 opacity-50 p-5 -mt-8">
+    ADVENTURES
+  </h1>
+  <p className="w-3/4 text-gray-500 text-justify">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Consequuntur quibusdam
+  </p>
+</div>
             </div>
           </div>
         ))}
