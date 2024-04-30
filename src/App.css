@@ -16,9 +16,14 @@
     justify-content: center;
     align-items: center;
 }
-
+body {
+    padding: 0;
+  }
 /* Style the individual slide */
-.slick-slide > div {
+div.slick-slide{
+    padding: 0
+}
+.slick-slide {
     text-align: center;
     padding: 20px;
 }

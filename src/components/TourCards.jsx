@@ -38,9 +38,9 @@ const TourCards = () => {
 
       {imagesLoaded && (
         <div className="flex justify-center mt-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center ">
+          <div className="tour-card grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center ">
             {tours.map((tour, index) => (
-              <div key={index} className="tour-card max-w-sm rounded overflow-hidden shadow-lg bg-white relative">
+              <div key={index} className=" max-w-sm rounded overflow-hidden shadow-lg bg-white relative">
                 <img src={tour.image} alt={tour.name} className="w-full" /> {/* Use the images object to get the correct image */}
                 <div className="absolute bg-black bg-opacity-60 text-white px-2 py-5 -mt-20 right-2">{tour.name}</div>
                 <div className="px-6 py-4">
