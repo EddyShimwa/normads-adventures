@@ -7,6 +7,7 @@ import BookingCard from '../components/bookingCard'
 import Footer from '../components/Footer'
 import BlogsMain from '../components/Blogs/BlogsMain'
 import BlogDetails from './BlogDetails'
+import About from '../components/About';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <Services/>
       <TourCards/>
       <BlogsMain/>
+      <About/>
       <Reviews/>
       <BookingCard/>
       <Footer/>

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import useScrollReveal from '../utils/useScrollReveal';
 
 const UpcomingTour = () => {
+  const startDate = new Date(2024, 6, 24);
+const endDate = new Date(2024, 7, 25);
 
   useScrollReveal(".upcoming-tour");
 
@@ -10,9 +12,13 @@ const UpcomingTour = () => {
       <h4 className=" flex text-gray-100 text-lg font-bold p-4">
         Upcoming Tour
       </h4>
+      <h1 className="flex items-start text-gray-300 text-xl font-bold p-4 -mt-6">
+  {startDate.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })} - {endDate.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
+</h1>
       <h1 className="flex items-start text-white text-4xl font-bold p-4 mb-2">
         Lakes of Ruhondo
       </h1>
+
       <div className="flex justify-between items-center">
         <h3 className="text-gray-100 flex text-left p-4">
           Lorem ipsum dolor sit amet consectetur elit. Consectetur
