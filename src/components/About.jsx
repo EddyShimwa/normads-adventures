@@ -14,7 +14,6 @@ const About = () => {
     { name: "Akagera National Park", coordinates: [51.5, -0.1], thumbnail: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg" },
     { name: "Nyungwe Forest", coordinates: [51.51, -0.11], thumbnail: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg" },
     { name: "Twin lakes", coordinates: [51.49, -0.12], thumbnail: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg" }
-    // Add more destinations as needed
   ];
 
   useEffect(() => {
