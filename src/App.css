@@ -2,13 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
-/* Add the following styles to your App.css or another stylesheet */
-
-/* Adjust the height of the carousel container
-.slick-slider {
-    height: 80vh; /* Adjust the height as needed */
- */
+#nomadsLogo {
+ width: 10%;
+ height: 100%;
+ border-radius: 0;
+}
 
 /* Center the content vertically and horizontally */
 .slick-slide {

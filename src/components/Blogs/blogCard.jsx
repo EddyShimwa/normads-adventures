@@ -11,7 +11,7 @@ function BlogCard({ blog }) {
 
   return (
     <div className="blog-card max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3">
-      <Link to={`/blogs/${blog.id}`} className="md:flex">
+      <div className="md:flex">
         <div className="md:flex-shrink-0">
           <img className="h-80 w-full object-cover md:w-48" src={blog.blogImage} alt={blog.blogTitle} />
         </div>
@@ -29,7 +29,7 @@ function BlogCard({ blog }) {
             </Link>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Logo from "../assets/NomadsLogo.png"
 const Header = () => {
   return (
     <header
       style={{ height: "8%", position: "absolute", top: "0", left: "0", right: "0", zIndex: "999" }}
       className="mx-auto flex justify-between p-3 border-current bg-white opacity-80 items-center w-full er:bg-gray-80"
     >
-      <div className="flex items-center space-x-2 font-bold">
-        <img src="logo.png" alt="Logo" className="h-2 w-8" />
-      </div>
+      <img src={Logo} alt="Logo" id="nomadsLogo" className="w-1/2"/>
       <nav className="flex justify-between w-3/5 font-bold">
+      
         <div className="group inline-block relative">
+
           <Link
             to="/"
             className="text-black  hover:text-gray-200  rounded text-lg"
