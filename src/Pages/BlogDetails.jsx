@@ -25,7 +25,7 @@ function BlogDetails() {
           </button>
         </div>
       ) : (
-        <p className="text-xl text-red-500">Blog not found</p>
+        <p className="text-xl text-red-500">The Blog not found</p>
       )}
     </div>
   );
