@@ -2,38 +2,30 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="p-5 bg-black text-white grid grid-cols-3 gap-4">
-      <div>
-        <h2 className="font-bold text-lg mb-2">Column 1</h2>
-        <ul className="space-y-2">
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          {/* Add more items as needed */}
-        </ul>
+    <footer className="bg-neutral-200 text-center text-white dark:bg-neutral-600 dark:text-neutral-200">
+      <div className="p-6">
+        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-3 justify-items-center w-screen">
+          <div className="mb-6 lg:mb-0">
+            <img
+              src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
+              className="w-1/2 rounded-md shadow-lg" />
+          </div>
+          <div className="mb-6 lg:mb-0">
+            <img
+              src="https://tecdn.b-cdn.net/img/new/fluid/city/111.webp"
+              className="w-1/2 rounded-md shadow-lg" />
+          </div>
+          <div className="mb-6 lg:mb-0">
+            <img
+              src="https://tecdn.b-cdn.net/img/new/fluid/city/112.webp"
+              className="w-1/2 rounded-md shadow-lg" />
+          </div>
+        </div>
       </div>
-      <div>
-        <h2 className="font-bold text-lg mb-2">Column 2</h2>
-        <ul className="space-y-2">
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          {/* Add more items as needed */}
-        </ul>
-      </div>
-      <div>
-        <h2 className="font-bold text-lg mb-2">Column 3</h2>
-        <ul className="space-y-2">
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          {/* Add more items as needed */}
-        </ul>
-      </div>
-      <div className='flex'>
-        <i className="fab fa-facebook-square text-2xl mx-2"> Fb </i>
-        <i className="fab fa-twitter-square text-2xl mx-2"> X </i>
-        <i className="fab fa-instagram-square text-2xl mx-2"> Instagram</i>
+
+      <div className="bg-neutral-300 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+        © 2023 Copyright:
+        <p className="dark:text-neutral-400">Normads Adventures</p>
       </div>
     </footer>
   );
