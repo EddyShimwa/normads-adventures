@@ -32,13 +32,12 @@ const TourCards = () => {
   }, []);
 
   return (
-
-    <div className="bg-cover bg-[#466174] h-screen border-4" style={{ backgroundImage: `url(${bg})`, zIndex: -1 }}>
-      <h1 className="text-center text-4xl text-gray-200 font-bold text-black w-full p-5 mt-16">MOST POPULAR TOURS</h1>
+    <div className="bg-cover bg-[#466174] h-screen md:h-[50vh] border-4" style={{ backgroundImage: `url(${bg})`, zIndex: -1 }}>
+      <h1 className="text-center text-4xl md:text-5xl text-gray-200 font-bold text-black w-full p-5 mt-16">MOST POPULAR TOURS</h1>
 
       {imagesLoaded && (
         <div className="flex justify-center mt-8">
-          <div className="tour-card grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center ">
+          <div className="tour-card grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center ">
             {tours.map((tour, index) => (
               <div key={index} className=" max-w-sm rounded overflow-hidden shadow-lg bg-white relative">
                 <img src={tour.image} alt={tour.name} className="w-full" /> {/* Use the images object to get the correct image */}
@@ -63,7 +62,6 @@ const TourCards = () => {
         </div>
       )}
     </div>
-
   );
 };
 

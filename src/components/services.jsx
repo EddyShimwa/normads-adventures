@@ -13,18 +13,16 @@ const services = [
 
 const Services= () => {
   return (
-    <div className="flex justify-center items-center h-[50vh] bg-[#ffffff]">
-    <div className="text-center ">
-      <h1 className="text-6xl font-bold text-gray-700 " >Top Values for you</h1>
-      <h3 className="text-xl">Try variety of benefits when using our services</h3>
-      <div className="flex flex-col items-center justify-center m-auto ">
-        <div className="flex flex-wrap">
+    <div className="flex justify-center items-center h-[60vh] sm:h-[100vh] md:h-[50vh] bg-[#ffffff]">
+      <div className="text-center px-4 sm:px-0">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-700">Top Values for you</h1>
+        <h3 className="text-sm sm:text-base md:text-lg">Try variety of benefits when using our services</h3>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-none md:flex md:flex-row md:space-x-4">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} />
           ))}
         </div>
       </div>
-    </div>
     </div>
   );
 };

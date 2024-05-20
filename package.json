@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
+    "@material-tailwind/react": "^2.1.9",
     "autoprefixer": "^10.4.19",
     "framer-motion": "^11.1.7",
     "leaflet-control-geocoder": "^2.4.0",

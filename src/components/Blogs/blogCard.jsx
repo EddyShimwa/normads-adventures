@@ -10,13 +10,13 @@ function BlogCard({ blog }) {
   const limitedContent = blog.blogContent.split(" ").slice(0, 30).join(" ") + "...";
 
   return (
-    <div className="blog-card max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3">
-      <div className="md:flex">
-        <div className="md:flex-shrink-0">
-          <img className="h-80 w-full object-cover md:w-48" src={blog.blogImage} alt={blog.blogTitle} />
+    <div className="blog-card max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden m-3">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex-shrink-0">
+          <img className="h-48 w-full object-cover md:h-80 md:w-48" src={blog.blogImage} alt={blog.blogTitle} />
         </div>
         <div className="p-8">
-          <h2 className="text-2xl font-semibold text-gray-800">{blog.blogTitle}</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{blog.blogTitle}</h2>
           <p className="mt-2 text-gray-600">{blog.timeCreated}</p>
           <p className="mt-2 text-gray-700">{limitedContent}</p>
           <div className="flex justify-end mt-4">

@@ -25,5 +25,14 @@
       "accommodation": "Stay in provided cabins",
       "guides": "4 tour guides",
       "difficulty": "Hard"
+    },
+    {
+      "image": "https://www.uniquerwandavacations.com/wp-content/uploads/2022/07/canpy-walk-nyungwe.jpg",
+      "name": "Canopy Walk",
+      "duration": "5 day tour",
+      "groupSize": "Up to 20 people",
+      "accommodation": "Hotel accommodation",
+      "guides": "3 tour guides",
+      "difficulty": "Medium"
     }
   ]

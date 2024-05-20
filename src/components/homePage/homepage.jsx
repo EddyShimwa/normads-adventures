@@ -6,12 +6,49 @@ import Header from "../header";
 import UpcomingTour from "../upcomings";
 import "./HomePage.css";
 
+// Define the LazyImage component
+const LazyImage = ({ src, alt }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoaded(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '0px',
+        threshold: 0.1,
+      }
+    );
+
+    if (src) {
+      observer.observe(document.querySelector(`img[data-src="${src}"]`));
+    }
+
+    return () => {
+      if (src) {
+        observer.unobserve(document.querySelector(`img[data-src="${src}"]`));
+      }
+    };
+  }, [src]);
+
+  return (
+    <img
+      src={loaded? src : ''}
+      alt={alt}
+      data-src={src}
+      onLoad={() => setLoaded(true)}
+    />
+  );
+};
+
 function HomePage() {
   const mainSlider = useRef();
   const thumbnailSlider = useRef();
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
-
-
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -34,7 +71,6 @@ function HomePage() {
       setCurrentSlideIndex(next);
     },
   };
-  
 
   const settingsThumbnails = {
     slidesToShow: 3,
@@ -44,7 +80,6 @@ function HomePage() {
     initialSlide: 0,
     afterChange: (index) => setSelectedThumbnailIndex(index),
   };
-  
 
   let slidesData = [
     {
@@ -91,31 +126,29 @@ function HomePage() {
         <Slider {...settingsMain} ref={mainSlider}>
           {slidesData.map((slide, index) => (
             <div
-            key={index}
-            className="fade-in"
-            style={{
-              height: "100vh",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundImage: `url(${slide.image})`,
-              transition: "background-image 0.5s ease-in-out",
-            }}
-          >
-          
+              key={index}
+              className="fade-in"
+              style={{
+                height: "100vh",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundImage: `url(${slide.image})`,
+                transition: "background-image 0.5s ease-in-out",
+              }}
+            >
               <div style={{ height: "100vh", backgroundSize: "cover", backgroundPosition: "center", backgroundImage: `url(${slide.image})` }}>
                 <Header />
                 <UpcomingTour />
-                <div className="absolute top-12 ml-8 flex flex-col items-start">
-                  <div>
-                    <h1 className="text-6xl w-1/2 font-bold text-white p-5 mt-2">NOMADS</h1>
-                    <h1 className="text-6xl w-1/2 font-bold text-gray-100 opacity-70 p-5 -mt-8">ADVENTURES</h1>
-                  </div>
-
-                  <div className={`mt-[15%] w-4/5 flex flex-col items-start ${currentSlideIndex === index ? 'slide-in' : ''}`}>
-                    <h1 className="text-7xl font-bold text-gray-100 mt-8 mb-6 underline mr-4">{slide.title}</h1>
-                    <h1 className="w-1/3 text-gray-200 leading-relaxed tracking-wider text-left">{slide.description}</h1>
-                  </div>
-                </div>
+                <div className="w-1/2 flex flex-col items-left">
+  <div>
+    <h1 className="text-6xl w-1/2 font-bold text-white mt-14">NOMADS</h1>
+    <h1 className="text-6xl w-1/2 font-bold text-gray-100 opacity-70-mt-8">ADVENTURES</h1>
+  </div>
+  <div className={`mt-[15%] w-4/5 flex flex-col items-start ${currentSlideIndex === index? 'slide-in' : ''}`}>
+    <h1 className="text-7xl font-bold text-gray-100 mt-8 mb-6 underline mr-4">{slide.title}</h1>
+    <h1 className="w-1/3 text-gray-200 leading-relaxed tracking-wider text-left">{slide.description}</h1>
+  </div>
+</div>
               </div>
             </div>
           ))}
@@ -126,7 +159,7 @@ function HomePage() {
               <div key={index}>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <div style={{ overflow: "hidden", height: "20vh", width: "auto", position: "relative" }}>
-                    <img src={slide.image} alt="" style={{ padding: "10px", objectFit: "cover", height: "100%", width: "100%", borderRadius: 0 }} />
+                    <LazyImage src={slide.image} alt={slide.title} />
                     <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-[10px]" style={{ width: "100%" }}>
                       <h3 className="text-white">{slide.title}</h3>
                     </div>
@@ -142,6 +175,19 @@ function HomePage() {
 }
 
 export default HomePage;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
