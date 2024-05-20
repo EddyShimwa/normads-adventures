@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/NomadsLogo.png"
+import BookingCard from "./bookingCard";
+
 const Header = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <header
       style={{ height: "8%", position: "absolute", top: "0", left: "0", right: "0", zIndex: "999" }}
@@ -9,9 +20,7 @@ const Header = () => {
     >
       <img src={Logo} alt="Logo" id="nomadsLogo" className="w-1/2 px-6"/>
       <nav className="flex justify-between w-3/5 font-bold">
-      
         <div className="group inline-block relative">
-
           <Link
             to="/"
             className="text-black  hover:text-gray-200  rounded text-lg"
@@ -59,11 +68,12 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <button className="text-gray-200 bg-black px-5 rounded-xl h-[5vh]">
+      <button onClick={openModal} className="text-gray-200 bg-black px-5 rounded-xl h-[5vh]">
         Book Now
       </button>
+      <BookingCard isOpen={modalOpen} onRequestClose={closeModal} /> 
     </header>
   );
-};
+};  
 
 export default Header;

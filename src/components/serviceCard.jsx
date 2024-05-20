@@ -1,16 +1,10 @@
 import React, { useEffect } from 'react';
-import ScrollReveal from 'scrollreveal';
+import useScrollReveal from '../utils/useScrollReveal';
 
 const ServiceCard = ({ service }) => {
-  useEffect(() => {
-    ScrollReveal().reveal('.service-card', { 
-      delay: 100, 
-      reset: true,
-      distance: '30px',
-      origin: 'bottom',
-      duration: 1000
-    });
-  }, []);
+
+useScrollReveal('.service-card');
+
 
   return (
     <div className="service-card max-w-sm rounded overflow-hidden shadow-lg m-3 flex flex-col items-center justify-center">

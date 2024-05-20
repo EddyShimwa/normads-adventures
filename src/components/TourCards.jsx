@@ -50,7 +50,7 @@ const TourCards = () => {
                     <li className="border-b-2 py-1">{tour.guides}</li>
                     <li className="py-1">Difficulty: {tour.difficulty}</li>
                   </ul>
-                </div>
+                </div>  
                 <div className="px-6 pt-4 pb-2">
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tour</span>
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>

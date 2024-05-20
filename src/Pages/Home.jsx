@@ -3,7 +3,6 @@ import HomePage from '../components/homePage/homepage'
 import Services from '../components/services';
 import TourCards from '../components/TourCards'
 import Reviews from '../components/reviews'
-import BookingCard from '../components/bookingCard'
 import Footer from '../components/Footer'
 import BlogsMain from '../components/Blogs/BlogsMain'
 import BlogDetails from './BlogDetails'
@@ -18,7 +17,6 @@ function Home() {
       <BlogsMain/>
       <About/>
       <Reviews/>
-      <BookingCard/>
       <Footer/>
     </div>
   )
