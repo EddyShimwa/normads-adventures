@@ -8,15 +8,16 @@
  border-radius: 0;
 }
 
-/* Center the content vertically and horizontally */
-.slick-slide {
+
+body {
+    padding: 0;
+  }
+
+  .slick-slide {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-body {
-    padding: 0;
-  }
 /* Style the individual slide */
 div.slick-slide{
     padding: 0

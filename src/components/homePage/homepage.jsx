@@ -64,7 +64,7 @@ function HomePage() {
     arrows: false,
     fade: true,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     asNavFor: nav2,
     beforeChange: (current, next) => {
       setSelectedThumbnailIndex(next);

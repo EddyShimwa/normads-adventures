@@ -5,7 +5,6 @@ import tours from "../tours.json";
 
 const TourCards = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
-
   useScrollReveal(".tour-card");
 
   useEffect(() => {
@@ -32,8 +31,8 @@ const TourCards = () => {
   }, []);
 
   return (
-    <div className="bg-cover bg-[#466174] h-screen md:h-[50vh] border-4" style={{ backgroundImage: `url(${bg})`, zIndex: -1 }}>
-      <h1 className="text-center text-4xl md:text-5xl text-gray-200 font-bold text-black w-full p-5 mt-16">MOST POPULAR TOURS</h1>
+    <div className="bg-cover bg-[#466174] h-screen border-4 flex flex-col justify-center items-center" style={{ backgroundImage: `url(${bg})`, zIndex: -1 }}>
+      <h1 className="text-center text-4xl md:text-5xl text-gray-200 font-bold text-black w-full ">MOST POPULAR TOURS</h1>
 
       {imagesLoaded && (
         <div className="flex justify-center mt-8">
