@@ -4,9 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "../header";
 import UpcomingTour from "../upcomings";
-import "./HomePage.css";
+import bg from "../../assets/bg.jpg";
 
-// Define the LazyImage component
 const LazyImage = ({ src, alt }) => {
   const [loaded, setLoaded] = useState(false);
 
@@ -19,7 +18,7 @@ const LazyImage = ({ src, alt }) => {
         }
       },
       {
-        rootMargin: '0px',
+        rootMargin: "0px",
         threshold: 0.1,
       }
     );
@@ -37,10 +36,11 @@ const LazyImage = ({ src, alt }) => {
 
   return (
     <img
-      src={loaded? src : ''}
+      src={loaded ? src : ""}
       alt={alt}
       data-src={src}
       onLoad={() => setLoaded(true)}
+      className="w-full h-full object-cover"
     />
   );
 };
@@ -52,6 +52,7 @@ function HomePage() {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [backgroundImage, setBackgroundImage] = useState(bg);
 
   useEffect(() => {
     setNav1(mainSlider.current);
@@ -69,6 +70,7 @@ function HomePage() {
     beforeChange: (current, next) => {
       setSelectedThumbnailIndex(next);
       setCurrentSlideIndex(next);
+      setBackgroundImage(slidesData[next].image);
     },
   };
 
@@ -85,120 +87,42 @@ function HomePage() {
     {
       image: "https://images.pexels.com/photos/1238277/pexels-photo-1238277.jpeg",
       title: "Gorilla Tours",
-      description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      description:
+        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     },
-  
-  {
-  image:
-    "https://images.pexels.com/photos/1273443/pexels-photo-1273443.jpeg",
-  title: "Canopy Walk",
-  description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  },
-  {
-  image:
-    "https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg",
-  title: "Camping Tours",
-  description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  },
-  {
-  image:
-    "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg",
-  title: "Mountain Climbing",
-  description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  },
-  {
-  image:
-    "https://images.pexels.com/photos/16444284/pexels-photo-16444284/free-photo-of-a-safari-vehicle-on-a-grass-field.jpeg",
-  title: "Safari Tours",
-  description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  },
-  {
-  image:
-    "https://images.pexels.com/photos/5531585/pexels-photo-5531585.jpeg",
-  title: "Safari Tours",
-  description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-  },
   ];
 
   return (
-    <>
-      <div className="slider-container relative" style={{ height: "100vh", display: "flex", flexDirection: "column", overflow: "hidden"}}>
-        <Slider {...settingsMain} ref={mainSlider}>
-          {slidesData.map((slide, index) => (
-            <div
-              key={index}
-              className="fade-in"
-              style={{
-                height: "100vh",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundImage: `url(${slide.image})`,
-                transition: "background-image 0.5s ease-in-out",
-              }}
-            >
-              <div style={{ height: "100vh", backgroundSize: "cover", backgroundPosition: "center", backgroundImage: `url(${slide.image})` }}>
-                <Header />
-                <UpcomingTour />
-                <div className="w-1/2 flex flex-col items-left">
-  <div>
-    <h1 className="text-6xl w-1/2 font-bold text-white mt-14">NOMADS</h1>
-    <h1 className="text-6xl w-1/2 font-bold text-gray-100 opacity-70-mt-8">ADVENTURES</h1>
-  </div>
-  <div className={`mt-[15%] w-4/5 flex flex-col items-start ${currentSlideIndex === index? 'slide-in' : ''}`}>
-    <h1 className="text-7xl font-bold text-gray-100 mt-8 mb-6 underline mr-4">{slide.title}</h1>
-    <h1 className="w-1/3 text-gray-200 leading-relaxed tracking-wider text-left">{slide.description}</h1>
-  </div>
-</div>
-              </div>
+<div>
+  {slidesData.map((slideItem, index) => {
+    return (
+      <div key={index}
+        className="relative flex flex-col items-start h-screen bg-cover bg-center justify-center"
+        style={{ backgroundImage: `url(${slideItem.image})` }}
+      >
+        <Header />
+        <div className="h-[60vh] bg-red-300 w-1/4 flex items-center justify-center p-5 m-5">
+          <div className="text-white">
+            <div className="mb-20">
+              <h1 className="text-6xl font-bold">NOMADS</h1>
+              <h1 className="text-6xl font-bold">ADVENTURES</h1>
             </div>
-          ))}
-        </Slider>
-        <div style={{ position: "absolute", bottom: "10px", right: "2%", width: "30%" }}>
-          <Slider {...settingsThumbnails} ref={thumbnailSlider}>
-            {slidesData.map((slide, index) => (
-              <div key={index}>
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <div style={{ overflow: "hidden", height: "20vh", width: "auto", position: "relative" }}>
-                    <LazyImage src={slide.image} alt={slide.title} />
-                    <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-[10px]" style={{ width: "100%" }}>
-                      <h3 className="text-white">{slide.title}</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
+            <div>
+              <h1 className="text-4xl font-semibold">{slideItem.title}</h1>
+              <h1 className="text-lg mt-4">{slideItem.description}</h1>
+            </div>
+          </div>
+          <div className="w-full py-8">
+            {/* Add your other components or content here */}
+          </div>
         </div>
       </div>
-    </>
-  );
+    )
+  })}
+  <div className="container mx-auto">
+  <UpcomingTour />
+  </div>
+</div>
+  )
 }
-
 export default HomePage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

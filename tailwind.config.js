@@ -1,8 +1,6 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
-
 export default {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, 
   theme: {
     extend: {
       animation: {
