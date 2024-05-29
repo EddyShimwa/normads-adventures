@@ -85,7 +85,8 @@ function HomePage() {
 
   let slidesData = [
     {
-      image: "https://images.pexels.com/photos/1238277/pexels-photo-1238277.jpeg",
+      image:
+        "https://images.pexels.com/photos/1238277/pexels-photo-1238277.jpeg",
       title: "Gorilla Tours",
       description:
         "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -94,45 +95,45 @@ function HomePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false); // State to toggle sidebar
   const [modalOpen, setModalOpen] = useState(false); // State to toggle modal
 
-  const toggleSidebar = () => { // Function to toggle sidebar
+  const toggleSidebar = () => {
+    // Function to toggle sidebar
     setSidebarOpen(!sidebarOpen);
   };
 
-  const toggleModal = () => { // Function to toggle modal
+  const toggleModal = () => {
+    // Function to toggle modal
     setModalOpen(!modalOpen);
   };
 
   return (
-<div>
-  {slidesData.map((slideItem, index) => {
-    return (
-      <div key={index}
-        className="relative flex flex-col items-start h-screen bg-cover bg-center justify-center"
-        style={{ backgroundImage: `url(${slideItem.image})` }}
-      >
-        <Header />
-        <div className="h-[60vh] bg-red-300 w-1/4 flex items-center justify-center p-5 m-5">
-          <div className="text-white">
-            <div className="mb-20">
-              <h1 className="text-6xl font-bold">NOMADS</h1>
-              <h1 className="text-6xl font-bold">ADVENTURES</h1>
+    <div>
+      <Header />
+      {slidesData.map((slideItem, index) => {
+        return (
+          <div
+            key={index}
+            className="h-[calc(100vh-80px)] flex flex-col bg-cover bg-center"
+            style={{ backgroundImage: `url(${slideItem.image})` }}
+          >
+            <div> 
+            <div className="h-[20vh] md:text-7xl text-3xl font-black w-2/3 items-center justify-center p-8 ml-5 mt-14">
+              <p className="text-gray-200 ">DISCOVER THE </p>
+              <p className="text-gray-300 opacity-70" >UNSEEN WONDERS.</p>
             </div>
-            <div>
-              <h1 className="text-4xl font-semibold">{slideItem.title}</h1>
-              <h1 className="text-lg mt-4">{slideItem.description}</h1>
-            </div>
-          </div>
-          <div className="w-full py-8">
-            {/* Add your other components or content here */}
-          </div>
-        </div>
-      </div>
-    )
-  })}
-  <div className="container mx-auto">
-  <UpcomingTour />
+            <div className="absolute bottom-5 h-[25vh] w-1/3 flex items-center justify-center p-8 ml-12 rounded-lg bg-gray-400 bg-opacity-20 backdrop-filter backdrop-blur-sm">
+  <div className="text-white">
+    <h1 className="text-4xl font-semibold">{slideItem.title}</h1>
+    <h1 className="text-lg mt-4">{slideItem.description}</h1>
   </div>
 </div>
-  )
+            </div>
+          </div>
+        );
+      })}
+      <div className="container mx-auto">
+        <UpcomingTour />
+      </div>
+    </div>
+  );
 }
 export default HomePage;
