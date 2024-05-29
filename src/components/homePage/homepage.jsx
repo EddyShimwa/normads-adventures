@@ -91,6 +91,16 @@ function HomePage() {
         "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     },
   ];
+  const [sidebarOpen, setSidebarOpen] = useState(false); // State to toggle sidebar
+  const [modalOpen, setModalOpen] = useState(false); // State to toggle modal
+
+  const toggleSidebar = () => { // Function to toggle sidebar
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const toggleModal = () => { // Function to toggle modal
+    setModalOpen(!modalOpen);
+  };
 
   return (
 <div>

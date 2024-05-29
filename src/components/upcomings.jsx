@@ -8,7 +8,7 @@ const endDate = new Date(2024, 7, 25);
   useScrollReveal(".upcoming-tour");
 
   return (
-    <div className="upcoming-tour top-[10%] absolute right-2 m-4 rounded-3xl bg-black bg-opacity-20 h-[50vh] w-1/4" style={{backdropFilter: 'blur(5px)'}}>
+    <div className="upcoming-tour top-[15%] absolute right-2 m-4 rounded-3xl bg-black bg-opacity-20 h-[50vh] w-1/4" style={{backdropFilter: 'blur(5px)'}}>
       <h4 className=" flex text-gray-100 text-lg font-bold p-4">
         Upcoming Tour
       </h4>
