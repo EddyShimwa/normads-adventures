@@ -1,59 +1,55 @@
-.slick-slide div{
-    padding: 0;
+
+/* Style for the bottom-left div */
+.custom-bottom-left {
+  width: 50%; /* Ensure the width is set correctly */
 }
+
+/* Slick slider general styles */
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.slick-slide img {
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  border-radius: 50%; /* Make the image rounded */
+  margin-bottom: 10px; /* Add space below the image */
+}
+
+.slick-slide p {
+  margin: 0;
+  color: #111111; 
+  font-size: 16px;
+  line-height: 1.5; 
+}
+
+.slick-arrow.slick-next {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
 .slide-in {
-    animation: slideInAnimation 0.5s ease-in-out forwards;
-  }
-  
-  @keyframes slideInAnimation {
-    0% {
+  animation: slideInAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInAnimation {
+  0% {
       opacity: 0;
       transform: translateY(50px);
-    }
-    100% {
+  }
+  100% {
       opacity: 1;
       transform: translateY(0);
-    }
   }
-  
-
-  .slick-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/* Style the individual slide */
-div.slick-slide{
-    padding: 0
-}
-.slick-slide {
-    text-align: center;
-    padding: 20px;
-}
-
-/* Style the profile image */
-.slick-slide img {
-    width: 100px; /* Adjust the width as needed */
-    height: 100px; /* Adjust the height as needed */
-    border-radius: 50%; /* Make the image rounded */
-    margin-bottom: 10px; /* Add space below the image */
-}
-
-/* Style the text content */
-.slick-slide p {
-    margin: 0;
-    color: #111111; /* Adjust the text color */
-    font-size: 16px; /* Adjust the font size */
-    line-height: 1.5; /* Adjust the line height */
-}
-.slick-arrow slick-next {
-    background-color: #000;
-    color: #fff;
-    border-radius: 50%;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 1;
 }

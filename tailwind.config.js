@@ -6,11 +6,15 @@ export default {
       animation: {
         fadeIn: 'fadeIn 2s ease-in forwards'
       },
+      fontSize: {
+        '2xs': '0.5rem',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
         }
+
       }
     },
   },

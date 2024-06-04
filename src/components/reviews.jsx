@@ -44,7 +44,7 @@ export default function SimpleSlider() {
       };
   
   return (
-    <div className="mx-auto h-[60vh] bg-white bg-cover"> 
+    <div className="reviews mx-auto h-[60vh] bg-white bg-cover"> 
       <h2 className="flex text-3xl justify-center items-center w-full m-auto py-8">Clients Testimonials</h2>
       <Slider {...settings} className="w-1/2 m-auto">
         {sampleReviews.map((review, index) => (

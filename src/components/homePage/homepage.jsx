@@ -85,13 +85,37 @@ function HomePage() {
 
   let slidesData = [
     {
-      image:
-        "https://images.pexels.com/photos/1238277/pexels-photo-1238277.jpeg",
+      image: "https://images.pexels.com/photos/1238277/pexels-photo-1238277.jpeg",
       title: "Gorilla Tours",
-      description:
-        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    },
+    {
+      image: "https://images.pexels.com/photos/1273443/pexels-photo-1273443.jpeg",
+      title: "Canopy Walk",
+      description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    },
+    {
+      image: "https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg",
+      title: "Camping Tours",
+      description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    },
+    {
+      image: "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg",
+      title: "Mountain Climbing",
+      description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    },
+    {
+      image: "https://images.pexels.com/photos/16444284/pexels-photo-16444284/free-photo-of-a-safari-vehicle-on-a-grass-field.jpeg",
+      title: "Safari Tours",
+      description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    },
+    {
+      image: "https://images.pexels.com/photos/5531585/pexels-photo-5531585.jpeg",
+      title: "Safari Tours",
+      description: "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     },
   ];
+
   const [sidebarOpen, setSidebarOpen] = useState(false); // State to toggle sidebar
   const [modalOpen, setModalOpen] = useState(false); // State to toggle modal
 
@@ -108,32 +132,34 @@ function HomePage() {
   return (
     <div>
       <Header />
-      {slidesData.map((slideItem, index) => {
-        return (
-          <div
-            key={index}
-            className="h-[calc(100vh-80px)] flex flex-col bg-cover bg-center"
-            style={{ backgroundImage: `url(${slideItem.image})` }}
-          >
-            <div> 
-            <div className="h-[20vh] md:text-7xl text-3xl font-black w-2/3 items-center justify-center p-8 ml-5 mt-14">
-              <p className="text-gray-200 ">DISCOVER THE </p>
-              <p className="text-gray-300 opacity-70" >UNSEEN WONDERS.</p>
-            </div>
-            <div className="absolute bottom-5 h-[25vh] w-1/3 flex items-center justify-center p-8 ml-12 rounded-lg bg-gray-400 bg-opacity-20 backdrop-filter backdrop-blur-sm">
-  <div className="text-white">
-    <h1 className="text-4xl font-semibold">{slideItem.title}</h1>
-    <h1 className="text-lg mt-4">{slideItem.description}</h1>
-  </div>
+      <div className="relative">
+        <Slider {...settingsMain} ref={mainSlider}>
+          {slidesData.map((slideItem, index) => (
+            <div key={index} className="custom-slide">
+              <div
+                className="h-[90vh] flex flex-col bg-cover bg-center justify-between"
+                style={{ backgroundImage: `url(${slideItem.image})` }}
+              >
+<div className="md:h-[25vh] h-[12vh]  md:text-5xl text-xs font-black md:w-fit w-1/4 items-center justify-center md:p-8 p-3 ml-5 mt-14 bg-black bg-opacity-30 text-white">
+  <p className="text-gray-100 ">DISCOVER THE  </p>
+  <p className="text-gray-200 opacity-90" >UNSEEN WONDERS...</p>
 </div>
+             
+<div className="h-[20vh] md:mt-20 mt-8 flex flex-col md:p-8 p-2 text-justify ml-5 mb-5 rounded-lg bg-black bg-opacity-30 text-gray-200 w-1/2">
+  <h1 className="md:text-4xl font-semibold">{slideItem.title}</h1>
+  <h1 className="md:text-lg text-xs md:mt-4 mt-2">{slideItem.description}</h1>
+</div>
+
+              </div>
             </div>
-          </div>
-        );
-      })}
+          ))}
+        </Slider>
+      </div>
       <div className="container mx-auto">
         <UpcomingTour />
       </div>
     </div>
   );
 }
+
 export default HomePage;

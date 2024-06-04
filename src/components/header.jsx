@@ -86,14 +86,14 @@ const Header= ({openModal}) => {
   ]
 
   return (
-      <div className='w-full z-50 mx-auto flex justify-between h-[80px] overflow-x-hidden bg-white'>
+      <div className='w-full z-20 mx-auto flex justify-between h-[8vh] overflow-x-hidden bg-white'>
 <div className='flex justify-between items-center ml-4 w-full '>
     <img src={logo} alt='logo' className='md:h-[50px] h-[35px] md:ml-3' />
-    <ul className='hidden md:flex font-epilogue text-[18px] items-center mx-12 text-gray-800'>
-        <li className='mx-6 hover:text-gray-800 ml-5 cursor-pointer font-bold'>Home</li>
-        <li className='mx-6 hover:text-gray-800 ml-5 cursor-pointer font-bold'>About Us</li>
-        <li className='mx-6 hover:text-gray-800 cursor-pointer font-bold'>Our Tours</li>
-        <li className='mx-6 hover:text-gray-800 cursor-pointer font-bold'>Our Top Destinations</li>
+    <ul className='hidden md:flex font-epilogue text-[13px] items-center mx-12 text-gray-800'>
+        <li className='mx-6 hover:text-gray-800 ml-5 cursor-pointer '>Home</li>
+        <li className='mx-6 hover:text-gray-800 ml-5 cursor-pointer '>About Us</li>
+        <li className='mx-6 hover:text-gray-800 cursor-pointer '>Our Tours</li>
+        <li className='mx-6 hover:text-gray-800 cursor-pointer'>Our Top Destinations</li>
     </ul>
 </div>
           <div className='hidden md:flex transition-all duration-700 font-epilogue items-center text-gray-600'>
@@ -111,7 +111,7 @@ const Header= ({openModal}) => {
               </ul>
           </div>
           <div className={`absolute flex justify-end overflow-hidden w-[100%] ${Sidenav ? 'pointer-events-auto' : 'pointer-events-none'}`}>
-              <div className={`h-screen  right-0 w-[60%] flex flex-col bg-white justify-center ${Sidenav ? 'translate-x-0' : 'translate-x-full '}  ease-in-out duration-300`}>
+              <div className={`h-screen  right-0 w-[60%]  flex flex-col bg-white justify-center ${Sidenav ? 'translate-x-0' : 'translate-x-full '}  ease-in-out duration-300`}>
                   <div className='flex justify-end mt-[29px] mr-[32px]'>
                       <img src={close} alt='closeIcon' className='h-[25px] cursor-pointer' onClick={toggleSidenav} />
                   </div>

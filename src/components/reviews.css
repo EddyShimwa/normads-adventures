@@ -1,10 +1,10 @@
-.slick-slide {
+.reviews .slick-slide {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.slick-slide div {
+.reviews .slick-slide div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,12 +12,12 @@
 }
 
 
-div.slick-slide{
+.reviews div.slick-slide{
     padding: 0;
 }
 
 
-.slick-slide img { 
+.reviews .slick-slide img { 
     margin-top: 12px;
     width: 80px; 
     height: 80px; 
@@ -26,13 +26,13 @@ div.slick-slide{
 }
 
 
-.slick-slide p {
+.reviews .slick-slide p {
     margin: 9px;
     color: #111111; 
     font-size: 16px; 
     line-height: 1.5; 
 }
-.slick-arrow slick-next {
+.reviews .slick-arrow slick-next {
     background-color: #000;
     color: #fff;
     border-radius: 50%;

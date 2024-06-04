@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import useScrollReveal from "../utils/useScrollReveal";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import rwData from "../rw.json";
 
 const About = () => {
   const mapContainer = useRef(null);
@@ -10,36 +11,100 @@ const About = () => {
   const [filteredDestinations, setFilteredDestinations] = useState([]);
   useScrollReveal(".about");
 
-  // Dummy top destinations data with thumbnails
   const topDestinations = [
-    { name: "Akagera National Park", coordinates: [51.5, -0.1], thumbnail: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg" },
-    { name: "Nyungwe Forest", coordinates: [51.51, -0.11], thumbnail: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg" },
-    { name: "Twin lakes", coordinates: [51.49, -0.12], thumbnail: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg" }
+    {
+      name: "Akagera National Park",
+      coordinates: [-1.877, 30.717],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+    {
+      name: "Nyungwe Forest",
+      coordinates: [-2.4873, 29.289],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+    {
+      name: "Volcanoes National Park",
+      coordinates: [-1.481, 29.5927],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+    {
+      name: "Lake Kivu",
+      coordinates: [-2.1951, 29.3476],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+    {
+      name: "King's Palace Museum",
+      coordinates: [-2.3423, 29.7553],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+    {
+      name: "Ethnographic Museum",
+      coordinates: [-2.5967, 29.7392],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+    {
+      name: "Gishwati-Mukura National Park",
+      coordinates: [-1.686, 29.3498],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+
+    {
+      name: "Murambi Genocide Memorial",
+      coordinates: [-2.4753, 29.0592],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
+    {
+      name: "Rubavu",
+      coordinates: [-1.7033, 29.2563],
+      thumbnail:
+        "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    },
   ];
 
   useEffect(() => {
-    const filtered = topDestinations.filter(destination =>
+    const filtered = topDestinations.filter((destination) =>
       destination.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredDestinations(filtered);
   }, [searchTerm]);
 
   useEffect(() => {
-    const map = L.map(mapContainer.current).setView([51.505, -0.09], 13);
+    const map = L.map(mapContainer.current).setView(
+      [-1.939539244251883, 29.910648339940828],
+      7
+    );
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      attribution:
+        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    filteredDestinations.forEach(destination => {
+    L.geoJSON(rwData, {
+      style: {
+        color: "#626663", // Change this to the color you want for the border
+        weight: 3,
+        opacity: 0.65,
+      },
+    }).addTo(map);
+
+    filteredDestinations.forEach((destination) => {
       const marker = L.marker(destination.coordinates)
         .addTo(map)
-        .bindPopup(`<div><h3>${destination.name}</h3><img src="${destination.thumbnail}" alt="${destination.name}" width="150" height="100"/></div>`);
+        .bindPopup(
+          `<div><h3>${destination.name}</h3><img src="${destination.thumbnail}" alt="${destination.name}" width="150" height="100"/></div>`
+        );
     });
 
     if (filteredDestinations.length > 0) {
       const firstDestination = filteredDestinations[0];
-      map.setView(firstDestination.coordinates, 13);
     }
 
     return () => {
@@ -47,30 +112,25 @@ const About = () => {
     };
   }, [filteredDestinations]);
 
-  const handleSearchChange = event => {
+  const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   return (
-    <div className="about flex justify-center h-[60vh] bg-white text-black p-8 rounded-lg w-full text-center relative">
-      <div className="w-1/2 relative">
-        <h2 className="text-xl font-bold mb-4">Our Top Destinations</h2>
-        <div ref={mapContainer} style={{ height: "70%", width: "80%" }} />
-        <input
-          type="text"
-          placeholder="Search destinations.."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className="absolute top-0 left-0 bg-white border border-gray-300 rounded-md p-2 mb-8"
-        />
-      </div>
-      <div className="w-1/2">
-        <h2 className="text-xl font-bold mb-4">About Us</h2>
-        <p className="text-base leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non ipsum id turpis commodo convallis. Donec quis nunc non nisi efficitur viverra. Nullam eu nisi vitae lacus bibendum bibendum nec non lorem. Sed sollicitudin justo sit amet mauris fermentum vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu nisi vitae lacus bibendum bibendum nec non lorem. Sed sollicitudin justo sit amet mauris fermentum vehicula.
-        </p>
-      </div>
-    </div>
+<div className="about flex h-screen justify-center bg-white text-black p-8 rounded-lg w-full text-center mt-20">
+  <div className="md:w-1/2 w-1/4 relative ">
+    <h2 className="text-4xl font-bold mb-4 text-gray-700 ">Our Top Destinations</h2>
+    <div ref={mapContainer} style={{ height: "60%", borderRadius: "20px" }}/>
+    <input
+      type="text"
+      placeholder="Search destinations..."
+      value={searchTerm}
+      onChange={handleSearchChange}
+      className=" bg-white border border-gray-700 rounded-md p-2 mb-8"
+    />
+  </div>
+
+</div>
   );
 };
 

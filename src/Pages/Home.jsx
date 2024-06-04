@@ -11,9 +11,9 @@ import About from '../components/About';
 function Home() {
   return (
     <div>
-      <HomePage/>
-      <Services/>
-      <TourCards/>
+      {/* <HomePage/> */}
+      {/* <Services/> */}
+      {/* <TourCards/> */}
       <BlogsMain/>
       <About/>
       <Reviews/>
