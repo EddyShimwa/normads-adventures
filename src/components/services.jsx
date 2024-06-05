@@ -13,7 +13,7 @@ const services = [
 
 const Services= () => {
   return (
-    <div className="flex justify-center items-center h-[100vh] bg-[#ffffff]">
+    <div className="flex justify-center items-center h-[100vh] bg-[#ffffff] ">
       <div className="text-center px-4 ">
         <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-700">Top Values for you</h1>
         <h3 className="text-sm  md:text-lg">Try variety of benefits when using our services</h3>

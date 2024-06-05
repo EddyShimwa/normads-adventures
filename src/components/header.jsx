@@ -5,10 +5,6 @@ import BookingCard from "./bookingCard";
 import logo from '../assets/images/logo.png'
 import downArrow from '../assets/images/icon-arrow-down.svg'
 import upArrow from '../assets/images/icon-arrow-up.svg'
-import todo from '../assets/images/icon-todo.svg'
-import calender from '../assets/images/icon-calendar.svg'
-import reminder from '../assets/images/icon-reminders.svg'
-import planning from '../assets/images/icon-planning.svg'
 import menu from '../assets/images/icon-menu.svg'
 import close from '../assets/images/icon-close-menu.svg'
 
@@ -48,11 +44,6 @@ const Header= ({openModal}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-
-  function toggleComNav() {
-      SetComNav(!Comnav);
-  }
-
   const toggleSidenav = () => {
       SetSideNav(!Sidenav);
   }
@@ -65,28 +56,9 @@ const Header= ({openModal}) => {
       SetSideCom(!sideCom);
   }
 
-  const featureList = [
-      {
-          "name": "Todo List",
-          "image": todo,
-      },
-      {
-          "name": "Calendar",
-          "image": calender,
-      },
-      {
-          "name": "Reminders",
-          "image": reminder,
-      },
-
-      {
-          "name": "Planning",
-          "image": planning,
-      },
-  ]
 
   return (
-      <div className='w-full z-20 mx-auto flex justify-between h-[8vh] overflow-x-hidden bg-white'>
+      <div className='w-full z-100 mx-auto flex justify-between h-[8vh] overflow-x-hidden bg-white'>
 <div className='flex justify-between items-center ml-4 w-full '>
     <img src={logo} alt='logo' className='md:h-[50px] h-[35px] md:ml-3' />
     <ul className='hidden md:flex font-epilogue text-[13px] items-center mx-12 text-gray-800'>
@@ -111,20 +83,13 @@ const Header= ({openModal}) => {
               </ul>
           </div>
           <div className={`absolute flex justify-end overflow-hidden w-[100%] ${Sidenav ? 'pointer-events-auto' : 'pointer-events-none'}`}>
-              <div className={`h-screen  right-0 w-[60%]  flex flex-col bg-white justify-center ${Sidenav ? 'translate-x-0' : 'translate-x-full '}  ease-in-out duration-300`}>
+          <div className={`h-screen right-0 w-[60%] flex flex-col bg-white justify-center transform transition-transform ease-in-out duration-300 ${Sidenav ? 'translate-x-0' : 'translate-x-full'}`}>
                   <div className='flex justify-end mt-[29px] mr-[32px]'>
                       <img src={close} alt='closeIcon' className='h-[25px] cursor-pointer' onClick={toggleSidenav} />
                   </div>
                   <ul className='text-gray-600 font-epilogue text-[18px] flex flex-col ml-[25px] mt-6'>
                       <li className='flex items-center cursor-pointer my-3' onClick={toggleSideFae}>Features<img src={sideFae ? upArrow : downArrow} alt='arrow' className='h-[8px] ml-[18px]' /></li>
-                      <div className={`${sideFae ? 'h-full' : 'h-[0px]'} overflow-hidden ml-[35px] flex flex-col transition-all duration-300`}>
-                          <ul className='my-[15px]'>
-                              <li className='flex items-start my-2.5 '><img src={todo} alt='todo icon' className='h-[20px] w-5 mr-2' />Todo List</li>
-                              <li className='flex  items-start my-2.5 '><img src={calender} alt='calender icon' className='h-[20px] w-5 mr-2' />Calendar</li>
-                              <li className='flex items-start my-2.5 '><img src={reminder} alt='reminder icon' className='h-[20px] w-4 mr-3' />Reminders</li>
-                              <li className='flex items-start my-2.5 '><img src={planning} alt='planning icon' className='h-[20px] mr-2' />Planning</li>
-                          </ul>
-                      </div>
+
                       <li className='flex items-center cursor-pointer my-3' onClick={toggleSideCom}>Company<img src={sideCom ? upArrow : downArrow} alt='arrow' className='h-[8px] ml-[15px]' /></li>
                       <div className={`${sideCom ? 'h-full' : 'h-[0px]'} overflow-hidden transition-all duration-300 flex flex-col ml-[35px]`}>
                           <ul className='my-[15px]'>

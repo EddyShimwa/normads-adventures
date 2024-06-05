@@ -117,16 +117,16 @@ const About = () => {
   };
 
   return (
-<div className="about flex h-screen justify-center bg-white text-black p-8 rounded-lg w-full text-center mt-20">
-  <div className="md:w-1/2 w-1/4 relative ">
-    <h2 className="text-4xl font-bold mb-4 text-gray-700 ">Our Top Destinations</h2>
+<div className="about flex h-screen justify-center bg-white text-black p-8 rounded-lg w-full text-center mt-20 ">
+  <div className="md:w-1/2 w-full relative ">
+    <h2 className="md:text-3xl  font-bold mb-4 text-gray-700  ">Our Top Destinations</h2>
     <div ref={mapContainer} style={{ height: "60%", borderRadius: "20px" }}/>
     <input
       type="text"
       placeholder="Search destinations..."
       value={searchTerm}
       onChange={handleSearchChange}
-      className=" bg-white border border-gray-700 rounded-md p-2 mb-8"
+      className=" bg-white border border-gray-700 rounded-md p-2 mt-4"
     />
   </div>
 

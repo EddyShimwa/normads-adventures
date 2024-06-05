@@ -4,8 +4,6 @@ import useScrollReveal from '../utils/useScrollReveal';
 const ServiceCard = ({ service }) => {
 
 useScrollReveal('.service-card');
-
-
   return (
     <div className="service-card max-w-sm rounded overflow-hidden shadow-lg m-3 flex flex-col items-center justify-center">
       <div className="px-8 py-8 text-center">

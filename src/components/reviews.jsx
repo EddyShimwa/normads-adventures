@@ -35,7 +35,7 @@ const sampleReviews = [
 export default function SimpleSlider() {
     var settings = {
         autoplay: true,
-        autoplaySpeed: 2000, // Transition every 2 seconds
+        autoplaySpeed: 200000, // Transition every 2 seconds
         dots: true,
         infinite: true,
         speed: 500,
@@ -46,13 +46,13 @@ export default function SimpleSlider() {
   return (
     <div className="reviews mx-auto h-[60vh] bg-white bg-cover"> 
       <h2 className="flex text-3xl justify-center items-center w-full m-auto py-8">Clients Testimonials</h2>
-      <Slider {...settings} className="w-1/2 m-auto">
+      <Slider {...settings} className="md:w-1/2 m-auto">
         {sampleReviews.map((review, index) => (
-          <div key={index} className="flex flex-col items-center justify-center p-12 bg-gray-100 rounded-lg shadow-lg h-64 m-4">
-            <img src={review.profileImage} alt="Profile" className="flex rounded-full justify-center m-auto w-24 h-24 object-cover border-2 border-gray-300" />
-            <h3 className="text-lg font-semibold text-gray-700 mt-4">{review.country}</h3>
-            <p className="mt-2 text-center text-gray-600 px-4">{review.content}</p>
-          </div>
+          <div key={index} className="relative flex flex-col items-center justify-center p-2 bg-gray-100 rounded-lg shadow-lg md:h-[20vh] m-4">
+  <img src={review.profileImage} alt="Profile" className="flex rounded-full justify-center m-auto h-24 object-cover border-2 border-gray-300" />
+  <p className="mt-2 mb-4 text-center text-gray-600 px-4">{review.content}</p>
+  <h3 className="absolute md:bottom-2 bottom-1 left-0 right-0 text-center text-sm font-semibold text-gray-700">{review.country}</h3>
+</div>
         ))}
       </Slider>
     </div>
