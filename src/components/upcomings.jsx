@@ -9,7 +9,7 @@ const UpcomingTour = () => {
 
   return (
     <div
-      className="upcoming-tour top-[15%] absolute right-2 m-4 rounded-3xl bg-black bg-opacity-20 md:h-[50vh] h-[48vh] md:w-1/4 w-1/2 z-10"
+      className="upcoming-tour top-[15%] absolute right-2 m-4 rounded-3xl bg-black bg-opacity-20 md:h-[50vh] h-[48vh] md:w-1/4 w-1/2 z-2"
     >
       <h4 className=" flex text-gray-100 md:text-lg text-sm font-bold p-4">
         Upcoming Tour

@@ -3,6 +3,15 @@ import useScrollReveal from "../utils/useScrollReveal";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import rwData from "../rw.json";
+import customMarker from '../assets/images/giphy.gif'
+import { Icon } from "leaflet";
+
+
+const defaultMarker = new Icon({
+  iconUrl: customMarker,
+  iconSize: [25, 41], // size of the icon
+  iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+});
 
 const About = () => {
   const mapContainer = useRef(null);
@@ -96,11 +105,11 @@ const About = () => {
     }).addTo(map);
 
     filteredDestinations.forEach((destination) => {
-      const marker = L.marker(destination.coordinates)
-        .addTo(map)
-        .bindPopup(
-          `<div><h3>${destination.name}</h3><img src="${destination.thumbnail}" alt="${destination.name}" width="150" height="100"/></div>`
-        );
+      const marker = L.marker(destination.coordinates, { icon: defaultMarker })
+      .addTo(map)
+      .bindPopup(
+        `<div><h3>${destination.name}</h3><img src="${destination.thumbnail}" alt="${destination.name}" width="150" height="100"/></div>`
+      );  
     });
 
     if (filteredDestinations.length > 0) {

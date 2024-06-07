@@ -43,10 +43,10 @@ export default function SimpleSlider() {
         slidesToScroll: 2, 
       };
   
-  return (
-    <div className="reviews mx-auto h-[60vh] bg-white bg-cover"> 
-      <h2 className="flex text-3xl justify-center items-center w-full m-auto py-8">Clients Testimonials</h2>
-      <Slider {...settings} className="md:w-1/2 m-auto">
+  return (  
+    <div className="reviews flex h-screen bg-white"> 
+
+      <Slider {...settings} className="md:w-1/2 w-full m-auto">
         {sampleReviews.map((review, index) => (
           <div key={index} className="relative flex flex-col items-center justify-center p-2 bg-gray-100 rounded-lg shadow-lg md:h-[20vh] m-4">
   <img src={review.profileImage} alt="Profile" className="flex rounded-full justify-center m-auto h-24 object-cover border-2 border-gray-300" />
